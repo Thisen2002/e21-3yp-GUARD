@@ -9,14 +9,14 @@ export default defineConfig({
     proxy: {
       '/api': {
         // target: 'https://e21-3yp-guard.onrender.com',
-        target: 'http://localhost:5000',
+        // target: 'http://localhost:5000',
         target: 'http://3.110.123.26:5000',
         changeOrigin: true,
         secure: true,
       },
       '/socket.io': {
         // target: 'https://e21-3yp-guard.onrender.com',
-        target: 'http://localhost:5000',
+        // target: 'http://localhost:5000',
         target: 'http://3.110.123.26:5000',
         ws: true,
         changeOrigin: true,
@@ -24,7 +24,7 @@ export default defineConfig({
       },
       '/uploads': {
         // proxy local fish images served by the backend
-        target: 'http://localhost:5000',
+        // target: 'http://localhost:5000',
         target: 'http://3.110.123.26:5000',
         changeOrigin: true,
         secure: false,
