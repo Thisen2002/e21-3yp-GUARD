@@ -25,9 +25,23 @@
 }
 
 .users-row-actions {
-  
   display: flex;
   gap: 0.5rem;
   justify-content: flex-end;
   flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .users-form-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .users-form-actions .btn {
+    width: 100%;
+  }
+
+  .users-row-actions {
+    justify-content: flex-start;
+  }
 }

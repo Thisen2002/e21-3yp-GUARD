@@ -406,3 +406,36 @@
     justify-content: flex-start;
   }
 }
+
+@media (max-width: 480px) {
+  .about-sections {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+    gap: 1rem;
+  }
+
+  .section-label {
+    font-size: 2.2rem;
+  }
+
+  .hardware-content {
+    padding: 0 0.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-hardware,
+  .about-software {
+    border-radius: 16px;
+    margin-top: 2.5rem;
+  }
+
+  .hardware-card {
+    padding: 1rem;
+  }
+
+  .software-content {
+    padding: 2.5rem 0.75rem;
+    gap: 1.5rem;
+  }
+}

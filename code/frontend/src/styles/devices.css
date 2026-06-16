@@ -52,3 +52,24 @@
 .devices-form-submit {
   height: fit-content;
 }
+
+@media (max-width: 768px) {
+  .devices-header {
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .devices-form {
+    flex-direction: column;
+  }
+
+  .devices-form-device-id,
+  .devices-form-device-name {
+    flex: 1 1 100%;
+  }
+
+  .devices-form-submit {
+    width: 100%;
+  }
+}

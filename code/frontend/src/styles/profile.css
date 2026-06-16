@@ -468,6 +468,45 @@
   }
 }
 
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 0.75rem;
+  }
+
+  .profile-card {
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  .profile-title {
+    font-size: 1.35rem;
+  }
+
+  .profile-avatar-container {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile-picture-default {
+    font-size: 3rem;
+  }
+
+  .profile-input-group {
+    flex-direction: column;
+  }
+
+  .profile-inline-verify-btn {
+    padding: 0.6rem 1rem;
+  }
+
+  .profile-btn-edit,
+  .profile-btn-save,
+  .profile-btn-cancel {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
 .profile-country-dropdown {
   padding: 0.75rem 0.5rem;
   border: 1.5px solid var(--border);

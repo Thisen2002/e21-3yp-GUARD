@@ -85,6 +85,33 @@
     margin: -1rem;
     padding: 1rem;
   }
+
+  .alerts-title {
+    font-size: 1.2rem;
+  }
+
+  /* Make table horizontally scrollable */
+  .alerts-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .alerts-table {
+    min-width: 560px;
+  }
+}
+
+@media (max-width: 480px) {
+  .alerts-page {
+    margin: -0.75rem;
+    padding: 0.75rem;
+  }
+
+  .pref-toggle-btn {
+    min-width: 80px;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
 }
 
 /* Alert Deep-Link Highlight */

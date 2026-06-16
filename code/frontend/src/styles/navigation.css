@@ -1,4 +1,6 @@
-/* Shared navigation bar */
+/* =============================================
+   PUBLIC / LANDING PAGE NAVIGATION
+   ============================================= */
 .site-nav {
   display: flex;
   justify-content: space-between;
@@ -11,8 +13,10 @@
   z-index: 1100;
   backdrop-filter: blur(6px);
   transition: box-shadow 200ms ease, background-color 200ms ease;
+  flex-wrap: wrap;
 }
 
+/* ── Brand ── */
 .site-nav-brand {
   display: inline-flex;
   align-items: center;
@@ -42,6 +46,7 @@
   letter-spacing: 0.5px;
 }
 
+/* ── Desktop links ── */
 .site-nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -60,7 +65,8 @@
   font-size: 0.88rem;
   font-weight: 700;
   line-height: 1;
-  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  transition: background-color 180ms ease, color 180ms ease,
+              transform 180ms ease, box-shadow 180ms ease;
 }
 
 .site-nav-link:hover,
@@ -73,18 +79,134 @@
   outline: none;
 }
 
+/* =============================================
+   HAMBURGER BUTTON (mobile only)
+   ============================================= */
+.site-nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.site-nav-hamburger:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.site-ham-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.25s ease, width 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animate into × */
+.site-nav-hamburger.open .site-ham-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-nav-hamburger.open .site-ham-bar:nth-child(2) { opacity: 0; width: 0; }
+.site-nav-hamburger.open .site-ham-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* =============================================
+   MOBILE DROPDOWN (landing page — white theme)
+   ============================================= */
+.site-nav-mobile-menu {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity    0.25s ease;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 8px 20px rgba(11, 54, 88, 0.1);
+}
+
+.site-nav-mobile-menu.open {
+  max-height: 360px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Centered pill grid */
+.site-nav-mobile-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+/* Pills — same style as desktop .site-nav-link */
+.site-nav-mobile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.52rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #0f172a;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1;
+  border: 1.5px solid #e2e8f0;
+  transition: background-color 180ms ease, color 180ms ease,
+              border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.site-nav-mobile-link:hover {
+  background-color: #0b3658;
+  border-color: #0b3658;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(11, 54, 88, 0.18);
+}
+
+.site-nav-mobile-link.active {
+  background-color: #0b3658;
+  border-color: #0b3658;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(11, 54, 88, 0.2);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (min-width: 769px) {
+  .site-nav-hamburger   { display: none !important; }
+  .site-nav-mobile-menu { display: none !important; }
+  .site-nav-links       { display: flex; }
+}
+
 @media (max-width: 768px) {
   .site-nav {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.25rem;
+    gap: 0;
+    justify-content: space-between;
+    align-items: center;
   }
+  .site-nav-links     { display: none !important; }
+  .site-nav-hamburger { display: flex; }
+}
 
-  .site-nav-brand {
-    justify-content: center;
-  }
-
-  .site-nav-links {
-    justify-content: center;
-  }
+@media (max-width: 480px) {
+  .site-nav           { padding: 0.65rem 1rem; }
+  .site-nav-logo      { width: 42px; height: 42px; }
+  .site-nav-title     { font-size: 1.05rem; }
+  .site-nav-mobile-link  { font-size: 0.82rem; padding: 0.45rem 0.85rem; }
+  .site-nav-mobile-inner { gap: 0.5rem; padding: 0.85rem 1rem 1rem; }
 }

@@ -263,13 +263,57 @@
 }
 
 @media (max-width: 768px) {
+  .dashboard-page {
+    margin: -1rem;
+    padding: 1rem;
+  }
+
   .dash-main-grid { grid-template-columns: 1fr; }
+
+  .tank-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tank-card {
+    max-width: none;
+    min-height: 14rem;
+  }
+
+  .dash-search {
+    max-width: 100%;
+  }
+
+  .dash-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sensor-tile-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .gauge-value { font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .dashboard-page {
+    margin: -0.75rem;
+    padding: 0.75rem;
+  }
 
   .tank-grid {
     grid-template-columns: 1fr;
   }
 
+  .dash-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .tank-card {
-    max-width: none;
+    min-height: 12rem;
+  }
+
+  .dash-title {
+    font-size: 1.2rem;
   }
 }

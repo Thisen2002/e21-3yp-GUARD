@@ -41,3 +41,26 @@
   color: white;
 }
 
+@media (max-width: 768px) {
+  .device-detail-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .worker-assign-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tank-chart-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 480px) {
+  .device-detail-header h2 {
+    font-size: 1.1rem;
+  }
+}
+
